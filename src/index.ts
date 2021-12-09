@@ -45,10 +45,10 @@ interface IRepo {
 
   if (!committedTimeResponseMap) return;
 
-  let morning = 0; // 6 - 12
-  let daytime = 0; // 12 - 18
-  let evening = 0; // 18 - 24
-  let night = 0; // 0 - 6
+  let morning = 0; // 6 - 11
+  let daytime = 0; // 11 - 18
+  let evening = 0; // 18 - 23
+  let night = 0; // 23 - 6
 
   committedTimeResponseMap.forEach(committedTimeResponse => {
     committedTimeResponse?.data?.repository?.defaultBranchRef?.target?.history?.edges.forEach(edge => {
@@ -59,10 +59,10 @@ interface IRepo {
       /**
        * voting and counting
        */
-      if (hour >= 6 && hour < 12) morning++;
-      if (hour >= 12 && hour < 18) daytime++;
-      if (hour >= 18 && hour < 24) evening++;
-      if (hour >= 0 && hour < 6) night++;
+      if (hour >= 6 && hour < 11) morning++;
+      if (hour >= 11 && hour < 18) daytime++;
+      if (hour >= 18 && hour < 23) evening++;
+      if (hour >= 23 && hour < 6) night++;
     });
   });
 
