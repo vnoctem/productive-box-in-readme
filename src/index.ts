@@ -62,7 +62,7 @@ interface IRepo {
       if (hour >= 6 && hour < 11) morning++;
       if (hour >= 11 && hour < 18) daytime++;
       if (hour >= 18 && hour < 23) evening++;
-      if ((hour >= 23 && hour < 0) || (hour >= 0 && hour < 6)) night++;
+      if ((hour >= 23 && hour < 24) || (hour >= 0 && hour < 6)) night++;
     });
   });
 
