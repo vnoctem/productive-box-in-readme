@@ -29,7 +29,7 @@ export const createCommittedDateQuery = (id: string, name: string, owner: string
       defaultBranchRef {
         target {
           ... on Commit {
-            history(first: 1000, author: { id: "${id}" }) {
+            history(first: 100, author: { id: "${id}" }) {
               edges {
                 node {
                   committedDate
