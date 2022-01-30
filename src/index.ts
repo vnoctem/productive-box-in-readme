@@ -113,25 +113,7 @@ interface IRepo {
     repo: repo,
     path: path,
     message: '(Automated) Update README.md',
-    content: Buffer.from(lines.join('<br>'), 'utf8').toString('base64'),
+    content: Buffer.from('```text' + lines.join('<br>') + '```', 'utf8').toString('base64'),
     sha: sha
   }).catch(error => console.error(`Unable to update README\n${error}`));
-
-
-  /* const gist = await octokit.gists.get({
-    gist_id: process.env.GIST_ID
-  }).catch(error => console.error(`Unable to update gist\n${error}`));
-  if (!gist) return;
-
-  const filename = Object.keys(gist.data.files)[0];
-  await octokit.gists.update({
-    gist_id: process.env.GIST_ID,
-    files: {
-      [filename]: {
-        // eslint-disable-next-line quotes
-        filename: (morning + daytime) > (evening + night) ? "I'm an early 🐤" : "I'm a night 🦉",
-        content: lines.join('\n'),
-      },
-    },
-  }); */
 })();
