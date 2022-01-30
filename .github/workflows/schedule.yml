@@ -1,4 +1,4 @@
-name: Update gist
+name: Update README
 on:
   repository_dispatch:
     types: [build-event]
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Update readme
+      - name: Update README
         uses: vnoctem/productive-box@master
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

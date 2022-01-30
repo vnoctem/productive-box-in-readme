@@ -117,9 +117,10 @@ interface IRepo {
   const content = `${startComment}\n${productiveBoxContent}\n${endComment}`;
   console.log('content: ', content);
   //const newContent = Buffer.from(readmeContent.replace(`${startComment}[\\s\\S]+${endComment}`, content), 'utf8').toString('base64');
-  const regex = `${startComment}[\\d\\D]*?${endComment}`;
-  console.log('regex', regex);
-  const newContent = readmeContent.replace(regex, content);
+  // const regex = `${startComment}[\\d\\D]*?${endComment}`;
+  const re = new RegExp(`${startComment}[\\d\\D]*?${endComment}`);
+  console.log('re', re);
+  const newContent = readmeContent.replace(re, content);
   console.log('readmeContent after replace: ', readmeContent);
   console.log('newContent: ', newContent);
 
