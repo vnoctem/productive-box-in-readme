@@ -120,6 +120,7 @@ interface IRepo {
   const regex = `${startComment}[\\d\\D]*?${endComment}`;
   console.log('regex', regex);
   const newContent = readmeContent.replace(regex, content);
+  console.log('readmeContent after replace: ', readmeContent);
   console.log('newContent: ', newContent);
 
   const encodedContent = Buffer.from(newContent, 'utf8').toString('base64');
