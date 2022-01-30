@@ -110,18 +110,13 @@ interface IRepo {
   const sha = readme.data.sha;
 
   const title = (morning + daytime) > (evening + night) ? 'I\'m an early 🐤' : 'I\'m a night 🦉';
-  const productiveBoxContent = Buffer.from(
-    title + '\n\n' +
-    '```text\n' +
-    lines.join('\n') +
-    '\n```',
-    'utf8').toString('base64');
+  const productiveBoxContent = title + '\n\n```text\n' + lines.join('\n') + '\n```';
 
   const startComment = '<!--START_SECTION:productive-box-->';
   const endComment = '<!--END_SECTION:productive-box-->';
   const content = `${startComment}\n${productiveBoxContent}\n${endComment}`;
   console.log('content: ', content);
-  const newContent = readmeContent.replace(`${startComment}[\\s\\S]+${endComment}`, content);
+  const newContent = Buffer.from(readmeContent.replace(`${startComment}[\\s\\S]+${endComment}`, content), 'utf8').toString('base64');
   console.log('newContent: ', newContent);
 
   await octokit.repos.createOrUpdateFile({
