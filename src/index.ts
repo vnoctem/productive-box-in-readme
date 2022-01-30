@@ -116,15 +116,18 @@ interface IRepo {
   const endComment = '<!--END_SECTION:productive-box-->';
   const content = `${startComment}\n${productiveBoxContent}\n${endComment}`;
   console.log('content: ', content);
-  const newContent = Buffer.from(readmeContent.replace(`${startComment}[\\s\\S]+${endComment}`, content), 'utf8').toString('base64');
+  //const newContent = Buffer.from(readmeContent.replace(`${startComment}[\\s\\S]+${endComment}`, content), 'utf8').toString('base64');
+  const newContent = readmeContent.replace(`${startComment}[\\s\\S]+${endComment}`, content);
   console.log('newContent: ', newContent);
+
+  const encodedContent = Buffer.from(newContent, 'utf8').toString('base64');
 
   await octokit.repos.createOrUpdateFile({
     owner: process.env.OWNER_REPO,
     repo: process.env.OWNER_REPO,
     path: process.env.PATH,
     message: '(Automated) Update README.md',
-    content: newContent,
+    content: encodedContent,
     sha: sha
   }).catch(error => console.error(`Unable to update README\n${error}`));
 })();
