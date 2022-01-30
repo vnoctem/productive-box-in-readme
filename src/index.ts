@@ -82,10 +82,10 @@ interface IRepo {
   const lines = oneDay.reduce((prev, cur) => {
     const percent = cur.commits / sum * 100;
     const line = [
-      `${cur.label}`.padEnd(10, '&nbsp;'),
-      `${cur.commits.toString().padStart(5, '&nbsp;')} commits`.padEnd(14, '&nbsp;'),
+      `${cur.label}`.padEnd(10, String.fromCharCode(160)),
+      `${cur.commits.toString().padStart(5, String.fromCharCode(160))} commits`.padEnd(14, String.fromCharCode(160)),
       generateBarChart(percent, 19),
-      String(percent.toFixed(1)).padStart(5, '&nbsp;') + '%',
+      String(percent.toFixed(1)).padStart(5, String.fromCharCode(160)) + '%',
     ];
 
     return [...prev, line.join(' ')];
@@ -113,7 +113,7 @@ interface IRepo {
     repo: repo,
     path: path,
     message: '(Automated) Update README.md',
-    content: Buffer.from(lines.join('\n'), 'utf8').toString('base64'),
+    content: Buffer.from(lines.join('<br>'), 'utf8').toString('base64'),
     sha: sha
   }).catch(error => console.error(`Unable to update README\n${error}`));
 
