@@ -113,7 +113,7 @@ interface IRepo {
     repo: repo,
     path: path,
     message: '(Automated) Update README.md',
-    content: Buffer.from('```text' + lines.join('<br>') + '```', 'utf8').toString('base64'),
+    content: Buffer.from('```text\n' + lines.join('\n') + '\n```', 'utf8').toString('base64'),
     sha: sha
   }).catch(error => console.error(`Unable to update README\n${error}`));
 })();
