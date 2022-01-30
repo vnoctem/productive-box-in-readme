@@ -105,7 +105,7 @@ interface IRepo {
   }).catch(error => console.error(`Unable to get README\n${error}`));
   if (!readme) return;
 
-  const readmeContent = readme.data.content;
+  const readmeContent = Buffer.from(readme.data.content, 'base64').toString('utf8');
   console.log('readmeContent: ', readmeContent);
   const sha = readme.data.sha;
 
