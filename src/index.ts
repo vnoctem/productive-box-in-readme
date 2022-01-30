@@ -94,8 +94,31 @@ interface IRepo {
   /**
    * Finally, write into gist
    */
+  const owner = 'vnoctem';
+  const repo = 'vnoctem';
+  const path = 'README.md';
+
   const octokit = new Octokit({ auth: `token ${process.env.GH_TOKEN}` });
-  const gist = await octokit.gists.get({
+  const readme = await octokit.repos.getReadme({
+    owner: owner,
+    repo: repo,
+  }).catch(error => console.error(`Unable to get README\n${error}`));
+
+  if (!readme) return;
+
+  const sha = readme.data.sha;
+
+  await octokit.repos.createOrUpdateFile({
+    owner: owner,
+    repo: repo,
+    path: path,
+    message: '(Automated) Update README.md',
+    content: lines.join('\n'),
+    sha: sha
+  }).catch(error => console.error(`Unable to update README\n${error}`));
+
+
+  /* const gist = await octokit.gists.get({
     gist_id: process.env.GIST_ID
   }).catch(error => console.error(`Unable to update gist\n${error}`));
   if (!gist) return;
@@ -110,5 +133,5 @@ interface IRepo {
         content: lines.join('\n'),
       },
     },
-  });
+  }); */
 })();
