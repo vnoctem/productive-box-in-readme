@@ -88,7 +88,7 @@ interface IRepo {
     const line = [
       `${cur.label}`.padEnd(10),
       `${cur.commits.toString().padStart(5)} commits`.padEnd(14),
-      generateBarChart(percent, 19),
+      generateBarChart(percent, 21),
       String(percent.toFixed(1)).padStart(5) + '%',
     ];
 
@@ -105,21 +105,28 @@ interface IRepo {
   }).catch(error => console.error(`Unable to get README\n${error}`));
   if (!readme) return;
 
+  const readmeContent = readme.data.content;
   const sha = readme.data.sha;
+
   const title = (morning + daytime) > (evening + night) ? 'I\'m an early 🐤' : 'I\'m a night 🦉';
-  const content = Buffer.from(
-    '```text\n' +
+  const productiveBoxContent = Buffer.from(
     title + '\n\n' +
+    '```text\n' +
     lines.join('\n') +
     '\n```',
     'utf8').toString('base64');
+
+  const startComment = '<!--START_SECTION:productive-box-->';
+  const endComment = '<!--END_SECTION:productive-box-->';
+  const content = `${startComment}\n${productiveBoxContent}\n${endComment}`;
+  const newContent = readmeContent.replace(`${startComment}[\\s\\S]+${endComment}`, content);
 
   await octokit.repos.createOrUpdateFile({
     owner: process.env.OWNER_REPO,
     repo: process.env.OWNER_REPO,
     path: process.env.PATH,
     message: '(Automated) Update README.md',
-    content: content,
+    content: newContent,
     sha: sha
   }).catch(error => console.error(`Unable to update README\n${error}`));
 })();
