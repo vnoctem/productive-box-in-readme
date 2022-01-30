@@ -106,6 +106,7 @@ interface IRepo {
   if (!readme) return;
 
   const readmeContent = readme.data.content;
+  console.log('readmeContent: ', readmeContent);
   const sha = readme.data.sha;
 
   const title = (morning + daytime) > (evening + night) ? 'I\'m an early 🐤' : 'I\'m a night 🦉';
@@ -119,7 +120,9 @@ interface IRepo {
   const startComment = '<!--START_SECTION:productive-box-->';
   const endComment = '<!--END_SECTION:productive-box-->';
   const content = `${startComment}\n${productiveBoxContent}\n${endComment}`;
+  console.log('content: ', content);
   const newContent = readmeContent.replace(`${startComment}[\\s\\S]+${endComment}`, content);
+  console.log('newContent: ', newContent);
 
   await octokit.repos.createOrUpdateFile({
     owner: process.env.OWNER_REPO,
