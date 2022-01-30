@@ -82,10 +82,10 @@ interface IRepo {
   const lines = oneDay.reduce((prev, cur) => {
     const percent = cur.commits / sum * 100;
     const line = [
-      `${cur.label}`.padEnd(10),
-      `${cur.commits.toString().padStart(5)} commits`.padEnd(14),
+      `${cur.label}`.padEnd(10, '&nbsp;'),
+      `${cur.commits.toString().padStart(5, '&nbsp;')} commits`.padEnd(14, '&nbsp;'),
       generateBarChart(percent, 19),
-      String(percent.toFixed(1)).padStart(5) + '%',
+      String(percent.toFixed(1)).padStart(5, '&nbsp;') + '%',
     ];
 
     return [...prev, line.join(' ')];
