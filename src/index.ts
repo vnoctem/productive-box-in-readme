@@ -1,3 +1,7 @@
+/**
+ * Forked from https://github.com/maxam2017/productive-box
+ */
+
 import { resolve } from 'path';
 import { config } from 'dotenv';
 import { Octokit } from '@octokit/rest';
@@ -92,28 +96,30 @@ interface IRepo {
   }, []);
 
   /**
-   * Finally, write into gist
+   * Finally, write into README.md
    */
-  const owner = 'vnoctem';
-  const repo = 'vnoctem';
-  const path = 'README.md';
-
   const octokit = new Octokit({ auth: `token ${process.env.GH_TOKEN}` });
   const readme = await octokit.repos.getReadme({
-    owner: owner,
-    repo: repo,
+    owner: process.env.OWNER_REPO,
+    repo: process.env.OWNER_REPO,
   }).catch(error => console.error(`Unable to get README\n${error}`));
-
   if (!readme) return;
 
   const sha = readme.data.sha;
+  const title = (morning + daytime) > (evening + night) ? 'I\'m an early 🐤' : 'I\'m a night 🦉';
+  const content = Buffer.from(
+    '```text\n' +
+    title + '\n\n' +
+    lines.join('\n') +
+    '\n```',
+    'utf8').toString('base64');
 
   await octokit.repos.createOrUpdateFile({
-    owner: owner,
-    repo: repo,
-    path: path,
+    owner: process.env.OWNER_REPO,
+    repo: process.env.OWNER_REPO,
+    path: process.env.PATH,
     message: '(Automated) Update README.md',
-    content: Buffer.from('```text\n' + lines.join('\n') + '\n```', 'utf8').toString('base64'),
+    content: content,
     sha: sha
   }).catch(error => console.error(`Unable to update README\n${error}`));
 })();

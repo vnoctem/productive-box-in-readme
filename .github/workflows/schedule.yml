@@ -13,5 +13,6 @@ jobs:
         uses: vnoctem/productive-box@master
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GIST_ID: 1e995753c2a57dadb3af72f3052b8b95
-          TIMEZONE: America/New_York
+          TIMEZONE: America/Montreal
+          OWNER_REPO: vnoctem
+          PATH: README.md
