@@ -37,7 +37,7 @@ Create a token with the `repo` scope and copy it. (https://github.com/settings/t
 
 1. Fork this repo
 1. Open the "Actions" tab of your fork and click the "enable" button
-1. Edit the [environment variable](https://github.com/vnoctem/productive-box-in-readme/blob/master/.github/workflows/schedule.yml#L17-L18) in `.github/workflows/schedule.yml`:
+1. Edit the [environment variable](https://github.com/vnoctem/productive-box-in-readme/blob/main/.github/workflows/schedule.yml#L17-L18) in `.github/workflows/schedule.yml`:
 
    - **TIMEZONE:** The timezone of your location, eg. `Asia/Taipei` for Taiwan, `America/New_York` for New York in America, etc.
    - **OWNER_REPO:** Your GitHub username.
