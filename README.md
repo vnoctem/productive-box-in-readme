@@ -23,7 +23,7 @@
 ## Overview
 This project uses GitHub graphQL API to get the commit histories and write into the README by [rest.js](https://github.com/octokit/rest.js#readme)
 
-The time periods used to generate the stats are as follow:
+The time periods differ from the original project. The ones used to generate the stats are as follow:
   - Morning: >=6am and <11am
   - Daytime: >=11am and <6pm
   - Evening: >=6pm and <11pm
