@@ -21,7 +21,7 @@
 ---
 
 ## Overview
-This project uses GitHub graphQL API to get the commit histories and write into the gist by [rest.js](https://github.com/octokit/rest.js#readme)
+This project uses GitHub graphQL API to get the commit histories and write into the README by [rest.js](https://github.com/octokit/rest.js#readme)
 
 ## Setup
 
@@ -43,3 +43,5 @@ Create a token with the `repo` scope and copy it. (https://github.com/settings/t
 1. Go to the repo **Settings > Secrets**
 1. Add the following environment variables:
    - **GH_TOKEN:** The GitHub token generated above.
+
+
