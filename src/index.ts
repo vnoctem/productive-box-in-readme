@@ -107,8 +107,8 @@ interface IRepo {
 
   const readmeContent = Buffer.from(readme.data.content, 'base64').toString('utf8');
   const sha = readme.data.sha;
-  const startComment = '<!--START_SECTION:productive-box-->';
-  const endComment = '<!--END_SECTION:productive-box-->';
+  const startComment = '<!--START_SECTION:productive-box-in-readme-->';
+  const endComment = '<!--END_SECTION:productive-box-in-readme-->';
 
   const title = (morning + daytime) > (evening + night) ? 'I\'m an early 🐤' : 'I\'m a night 🦉';
   const productiveBoxContent = '```text\n' + title + '\n\n' + lines.join('\n') + '\n```';

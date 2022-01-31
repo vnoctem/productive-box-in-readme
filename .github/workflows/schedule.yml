@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Update README
-        uses: vnoctem/productive-box@main
+        uses: vnoctem/productive-box-in-readme@main
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           TIMEZONE: America/Montreal

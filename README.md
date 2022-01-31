@@ -6,9 +6,9 @@
 </p>
 <p align="center">
    <img src="https://img.shields.io/badge/language-typescript-blue?style"/>
-   <img src="https://img.shields.io/github/license/vnoctem/productive-box"/>
-   <img src="https://img.shields.io/github/stars/vnoctem/productive-box"/>
-   <img src="https://img.shields.io/github/forks/vnoctem/productive-box"/>
+   <img src="https://img.shields.io/github/license/vnoctem/productive-box-in-readme"/>
+   <img src="https://img.shields.io/github/stars/vnoctem/productive-box-in-readme"/>
+   <img src="https://img.shields.io/github/forks/vnoctem/productive-box-in-readme"/>
 </p>
 
 <p align="center">
