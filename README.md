@@ -32,9 +32,16 @@ The time periods differ from the [original project](https://github.com/maxam2017
 ## Setup
 
 ### Prep work
-Create a token with the `repo` scope and copy it. (https://github.com/settings/tokens/new)
- > enabling `repo` scope may seem **DANGEROUS**<br/>
- > but this GitHub Action only accesses your commit timestamp in repositories you contributed.
+1. You need to add two comment lines in your README.md
+   ```
+   <!--START_SECTION:productive-box-in-readme-->
+   <!--END_SECTION:productive-box-in-readme-->
+   ```
+   These lines will be our entry points for the productive box stats.
+   
+3. Create a token with the `repo` scope and copy it. (https://github.com/settings/tokens/new)
+  > enabling `repo` scope may seem **DANGEROUS**<br/>
+  > but this GitHub Action only accesses your commit timestamp in repositories you contributed.
 
 ### Project setup
 
