@@ -1,8 +1,7 @@
 <p align="center">
-  <a href="http://lovera.maxam.now.sh/">
-    <img src="https://user-images.githubusercontent.com/25841814/79395484-5081ae80-7fac-11ea-9e27-ac91472e31dd.png" alt="screenshot" width="500">
-  </a>
-  <h3 align="center">📌✨productive-box-in-readme (fork of https://github.com/maxam2017/productive-box)</h3>
+  <img width="500" alt="poster" src="https://user-images.githubusercontent.com/63318084/151737557-937925c2-de07-4084-923e-cd2776e61a58.png">
+  <h3 align="center">📌✨productive-box-in-readme</h3>
+  <h4 align="center">(fork of https://github.com/maxam2017/productive-box)</h4>
 </p>
 <p align="center">
    <img src="https://img.shields.io/badge/language-typescript-blue?style"/>
