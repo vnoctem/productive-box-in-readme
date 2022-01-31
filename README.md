@@ -42,7 +42,7 @@ This project uses GitHub graphQL API to get the commit histories and write into 
 
    - **TIMEZONE:** The timezone of your location, eg. `Asia/Taipei` for Taiwan, `America/New_York` for America in New York, etc.
    - **OWNER_REPO:** Your GitHub username.
-   - **PATH:** Path to your README file (default: README.md, should not need to be changed).
+   - **PATH:** Path to your README file (default is `README.md`; should not need to be changed).
 
 1. Go to the repo **Settings > Secrets**
 1. Add the following environment variables:
