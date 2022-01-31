@@ -106,32 +106,23 @@ interface IRepo {
   if (!readme) return;
 
   const readmeContent = Buffer.from(readme.data.content, 'base64').toString('utf8');
-  console.log('readmeContent: ', readmeContent);
   const sha = readme.data.sha;
+  const startComment = '<!--START_SECTION:productive-box-->';
+  const endComment = '<!--END_SECTION:productive-box-->';
 
   const title = (morning + daytime) > (evening + night) ? 'I\'m an early 🐤' : 'I\'m a night 🦉';
   const productiveBoxContent = title + '\n\n```text\n' + lines.join('\n') + '\n```';
+  const sectionContent = `${startComment}\n${productiveBoxContent}\n${endComment}`;
 
-  const startComment = '<!--START_SECTION:productive-box-->';
-  const endComment = '<!--END_SECTION:productive-box-->';
-  const content = `${startComment}\n${productiveBoxContent}\n${endComment}`;
-  console.log('content: ', content);
-  //const newContent = Buffer.from(readmeContent.replace(`${startComment}[\\s\\S]+${endComment}`, content), 'utf8').toString('base64');
-  // const regex = `${startComment}[\\d\\D]*?${endComment}`;
-  const re = new RegExp(`${startComment}[\\d\\D]*?${endComment}`);
-  console.log('re', re);
-  const newContent = readmeContent.replace(re, content);
-  console.log('readmeContent after replace: ', readmeContent);
-  console.log('newContent: ', newContent);
-
-  const encodedContent = Buffer.from(newContent, 'utf8').toString('base64');
+  const regex = new RegExp(`${startComment}[\\d\\D]*?${endComment}`);
+  const newContent = Buffer.from(readmeContent.replace(regex, sectionContent), 'utf8').toString('base64');
 
   await octokit.repos.createOrUpdateFile({
     owner: process.env.OWNER_REPO,
     repo: process.env.OWNER_REPO,
     path: process.env.PATH,
     message: '(Automated) Update README.md',
-    content: encodedContent,
+    content: newContent,
     sha: sha
   }).catch(error => console.error(`Unable to update README\n${error}`));
 })();
