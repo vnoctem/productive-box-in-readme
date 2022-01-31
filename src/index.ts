@@ -111,7 +111,7 @@ interface IRepo {
   const endComment = '<!--END_SECTION:productive-box-->';
 
   const title = (morning + daytime) > (evening + night) ? 'I\'m an early 🐤' : 'I\'m a night 🦉';
-  const productiveBoxContent = title + '\n\n```text\n' + lines.join('\n') + '\n```';
+  const productiveBoxContent = '```text\n' + title +'\n\n' + lines.join('\n') + '\n```';
   const sectionContent = `${startComment}\n${productiveBoxContent}\n${endComment}`;
 
   const regex = new RegExp(`${startComment}[\\d\\D]*?${endComment}`);

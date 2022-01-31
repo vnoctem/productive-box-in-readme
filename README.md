@@ -6,9 +6,9 @@
 </p>
 <p align="center">
    <img src="https://img.shields.io/badge/language-typescript-blue?style"/>
-   <img src="https://img.shields.io/github/license/maxam2017/productive-box"/>
-   <img src="https://img.shields.io/github/stars/maxam2017/productive-box"/>
-   <img src="https://img.shields.io/github/forks/maxam2017/productive-box"/>
+   <img src="https://img.shields.io/github/license/vnoctem/productive-box"/>
+   <img src="https://img.shields.io/github/stars/vnoctem/productive-box"/>
+   <img src="https://img.shields.io/github/forks/vnoctem/productive-box"/>
 </p>
 
 <p align="center">
@@ -38,9 +38,9 @@ This project uses GitHub graphQL API to get the commit histories and write into 
 
 1. Fork this repo
 1. Open the "Actions" tab of your fork and click the "enable" button
-1. Edit the [environment variable](https://github.com/maxam2017/productive-box/blob/master/.github/workflows/schedule.yml#L17-L18) in `.github/workflows/schedule.yml`:
+1. Edit the [environment variable](https://github.com/vnoctem/productive-box-in-readme/blob/master/.github/workflows/schedule.yml#L17-L18) in `.github/workflows/schedule.yml`:
 
-   - **TIMEZONE:** The timezone of your location, eg. `Asia/Taipei` for Taiwan, `America/New_York` for America in New York, etc.
+   - **TIMEZONE:** The timezone of your location, eg. `Asia/Taipei` for Taiwan, `America/New_York` for New York in America, etc.
    - **OWNER_REPO:** Your GitHub username.
    - **PATH:** Path to your README file (default: README.md, should not need to be changed).
 
