@@ -33,8 +33,8 @@ The time periods differ from the [original project](https://github.com/maxam2017
 
 ### Prep work
 Create a token with the `repo` scope and copy it. (https://github.com/settings/tokens/new)
- > enable `repo` scope seems **DANGEROUS**<br/>
- > but this GitHub Action only accesses your commit timestamp in repository you contributed.
+ > enabling `repo` scope may seem **DANGEROUS**<br/>
+ > but this GitHub Action only accesses your commit timestamp in repositories you contributed.
 
 ### Project setup
 
