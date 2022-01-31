@@ -29,10 +29,9 @@ This project uses GitHub graphQL API to get the commit histories and write into 
 ## Setup
 
 ### Prep work
-1. Create a new public GitHub Gist (https://gist.github.com/)
-1. Create a token with the `repo` scope and copy it. (https://github.com/settings/tokens/new)
-   > enable `repo` scope seems **DANGEROUS**<br/>
-   > but this GitHub Action only accesses your commit timestamp in repository you contributed.
+Create a token with the `repo` scope and copy it. (https://github.com/settings/tokens/new)
+ > enable `repo` scope seems **DANGEROUS**<br/>
+ > but this GitHub Action only accesses your commit timestamp in repository you contributed.
 
 ### Project setup
 
@@ -42,7 +41,7 @@ This project uses GitHub graphQL API to get the commit histories and write into 
 
    - **TIMEZONE:** The timezone of your location, eg. `Asia/Taipei` for Taiwan, `America/New_York` for New York in America, etc.
    - **OWNER_REPO:** Your GitHub username.
-   - **PATH:** Path to your README file (default: README.md, should not need to be changed).
+   - **PATH:** Path to your README file (default is `README.md`; should not need to be changed).
 
 1. Go to the repo **Settings > Secrets**
 1. Add the following environment variables:
