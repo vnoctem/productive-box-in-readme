@@ -1,6 +1,6 @@
 <p align="center">
   <img width="500" alt="poster" src="https://user-images.githubusercontent.com/63318084/151737557-937925c2-de07-4084-923e-cd2776e61a58.png">
-  <h3 align="center">📌✨productive-box-in-readme</h3>
+  <h3 align="center">📄✨productive-box-in-readme</h3>
   <h4 align="center">(fork of https://github.com/maxam2017/productive-box)</h4>
 </p>
 <p align="center">
