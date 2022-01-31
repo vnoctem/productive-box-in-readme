@@ -32,8 +32,8 @@ The time periods differ from the [original project](https://github.com/maxam2017
 ## Setup
 
 ### Prep work
-1. You need to add two comment lines in your README.md
-   ```
+1. You need to add two comment lines in your README.md, like this:
+   ```md
    <!--START_SECTION:productive-box-in-readme-->
    <!--END_SECTION:productive-box-in-readme-->
    ```
