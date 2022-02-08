@@ -23,11 +23,8 @@
 ## Overview
 This project uses GitHub graphQL API to get the commit histories and write into the README by [rest.js](https://github.com/octokit/rest.js#readme)
 
-The time periods differ from the [original project](https://github.com/maxam2017/productive-box). The ones used to generate the stats are as follow:
-  - Morning: >=6am and <11am
-  - Daytime: >=11am and <6pm
-  - Evening: >=6pm and <11pm
-  - Night: >=11pm and <6am
+The time periods differ from the [original project](https://github.com/maxam2017/productive-box). The ones used to generate the stats are as follow:<br>
+6am -> 🌞 Morning -> 11am -> 🌆 Daytime -> 6pm -> 🌃 Evening -> 11pm -> 🌙 Night -> 6am
 
 ## Setup
 
